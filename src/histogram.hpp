@@ -64,7 +64,7 @@ class Histogram {
   TH1D_ptr W_hist_check[11];
   TH2D_ptr W_VS_Q2_hist_check[11];
 
-  // static const short q2_bin = 5;
+  static const short q2_bin = 6;
   //   float q2_low_values[5] = {2.0, 2.40, 3.0, 3.5, 4.2};
   //   float q2_up_values[5] = {2.40, 3.0, 3.5, 4.2, 5.0};
 
@@ -82,10 +82,11 @@ class Histogram {
     
   // }
 
-  static const short w_bin = 8;
-  THnSparse *sevenDHist_pim;
-  THnSparse *sevenDHist_pip;
-  THnSparse *sevenDHist_prot;
+  static const short w_bin = 29;
+  THnSparse *sevenDHist_pim[q2_bin][w_bin];
+  THnSparse *sevenDHist_pip[q2_bin][w_bin];
+  THnSparse *sevenDHist_prot[q2_bin][w_bin];
+
 
  public:
   Histogram(const std::string& output_file);
